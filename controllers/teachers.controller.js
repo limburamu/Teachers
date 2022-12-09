@@ -38,15 +38,33 @@ teachersController.getSubjects = function(req, res) {
     res.status(200).json(responseSubject);
 }
 
+// teachersController.getSubject = function(req, res) {
+//     const teacherId = parseInt(req.params.subjectId);
+
+//     let responseSubject;
+
+//     subjects.forEach(subject => {
+//         if(subject.id === teacherId)
+//         {
+//             responseSubject = subject;
+//         }
+//     });
+//     if(responseSubject) {
+//         res.status(200).json(responseSubject);
+//     } else {
+//         res.send('subject not found');
+//     }
+// }
+
 teachersController.getSubject = function(req, res) {
-    const id = parseInt(req.params.subjectId);
+    const teacherId = parseInt(req.params.subjectId);
 
     let responseSubject;
 
     subjects.forEach(subject => {
-        if(subject.id === id)
+        if(teacherId === subjectIds)
         {
-            responseSubject = subject;
+            teacher = subjects;
         }
     });
     if(responseSubject) {
