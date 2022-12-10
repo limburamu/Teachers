@@ -18,7 +18,7 @@ teachersController.getSubjects = function(req, res) {
     const teacherId = parseInt(req.params.teacherId)
 
     let responseSubject = [];
-    let teacher
+    let teacher;
 
     teachers.forEach(t => {
         if(t.id === teacherId)
@@ -38,45 +38,25 @@ teachersController.getSubjects = function(req, res) {
     res.status(200).json(responseSubject);
 }
 
-// teachersController.getSubject = function(req, res) {
-//     const teacherId = parseInt(req.params.subjectId);
-
-//     let responseSubject;
-
-//     subjects.forEach(subject => {
-//         if(subject.id === teacherId)
-//         {
-//             responseSubject = subject;
-//         }
-//     });
-//     if(responseSubject) {
-//         res.status(200).json(responseSubject);
-//     } else {
-//         res.send('subject not found');
-//     }
-// }
-
 teachersController.getSubject = function(req, res) {
-    const id = parseInt(req.params.teacherId);
+    const teacherId = parseInt(req.params.teacherId);
 
-    let responseSubject;
-    // let teacher;
+    let teacher;
+    const subjectId = parseInt(req.params.subjectId);
 
-    teachers.forEach(teacher => {
-        if(teacher.id === id)
+    teachers.forEach(t => {
+        if(t.id === teacherId)
         {
-            for(i = 0; i < teachers.subjectIds.length; i++)
-            {
-                if(teacher.id === subjectsIds)
-                {
-                    res.status(200).json(responseSubject)
-                } else {
-                    res.send('subject not found');
-                    break;
-                }
-            }
+            teacher = t;
         }
     });
+    if(teacher) 
+    {
+        let subjectIds = teacher.subjectIds;
+        let pos = subjectIds.indexOf(subjectId);
+        res.status(200).json(subjects[pos]);
+    }
+    
 }
 
 teachersController.getTeachers = function(req, res) {

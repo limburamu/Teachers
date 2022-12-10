@@ -17,7 +17,7 @@ router.route('/:teacherId/subjects')
     .get(teachersController.getSubjects);
     
     
-router.route('/:teacherId/subjects/:subjectIds')
+router.route('/:teacherId/subjects/:subjectId')
     .get(teachersController.getSubject);    
 
 
