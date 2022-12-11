@@ -11,6 +11,13 @@ router.route('/:studentId')
     .get(studentsController.getStudent)
     .delete(studentsController.deleteStudent) 
     .post(studentsController.updateStudent);
+
+
+router.route('/:studentId/subjects')
+    .get(studentsController.getSubjects);
+
+
+    
     
     
 module.exports = router;    
