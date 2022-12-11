@@ -1,4 +1,4 @@
-const teachersController = {};
+const playersController = {};
 
 const players = [
     {id: 1, name: 'Sagar', age: 34, address: 'Dhulabari', clubIds: [1, 2, 3]},
