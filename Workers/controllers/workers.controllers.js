@@ -58,4 +58,22 @@ workersController.deleteWorkerById = function(req, res) {
     });
 };
 
+workersController.updateWorkerById = function(req, res) {
+    Worker.findByIdAndUpdate(req.params.workerId, req.body, function(error, data) {
+        if(error) {
+            res.status(404).json('Worker with given id is not found');
+        } else {
+                res.status(200).json('Worker with the given id is updated');
+        }
+    });
+};
+
+
+
+
 module.exports = workersController;
+
+
+// Worker.findByIdAndUpdate(req.params.workerId, req.body, function(error, data){
+
+// })

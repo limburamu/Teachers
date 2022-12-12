@@ -11,6 +11,7 @@ router.route('/')
 router.route('/:workerId')
     .get(workersController.getWorkerById)
     .delete(workersController.deleteWorkerById) 
+    .put(workersController.updateWorkerById)
     
     
 module.exports = router;    
