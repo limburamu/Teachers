@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/api', routes);
 
-const server = app.listen(process.env.NODE || 8000, function() {
+const server = app.listen(process.env.PORT || 8000, function() {
     console.log('Listening to port: ', server.address().port);
 });
 
